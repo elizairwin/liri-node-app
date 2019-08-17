@@ -4,7 +4,6 @@ const axios = require("axios");
 const fs = require("fs");
 const Spotify = require("node-spotify-api");
 const moment = require("moment");
-const inquirer = require("inquirer");
 
 //require liri to use keys from keys file (which are also in .env which will be hidden)
 const keys = require("./keys.js");
@@ -45,9 +44,10 @@ inquirer.prompt([
     choices: ["spotify-this-song", "movie-this", "do-what-it-says"],
     name: "LiriAsked"
     },
-])
 
-//spotify-this-song
+]).then(function(answers){
+
+    //spotify-this-song
 //this will show in the terminal:
     //artist(s)
     //the song's name
@@ -57,50 +57,54 @@ inquirer.prompt([
 
 if (response.choices === ("spotify-this-song")) {
 
-inquirer.prompt([
-    {
-    type: "input",
-    message: "What song do you want to hear?",
-    mame: "track"
-    },
-
-    function spotify(song) {
-        spotify
-        .search({ type: "track", query: song })
-        .then(function(response){
-            if (response.tracks.total === 0) {
-                errorConditionForSpotify();
-            } else {
-                console.log("Artist: " + response.tracks.items[0].artists[0].name);
-                console.log("Track: " + response.tracks.items[0].name);
-                console.log("Preview URL: " + response.tracks.items[0].preview_url);
-                console.log("Album: " + response.tracks.items[0].album.name);
-            }
-        }).catch(function (error) {  
-            console.log(error);
-            console.log("No Results found. Showing results for 'Oops!....I Did It Again' by Brittany Spears");
-      });
-    },
-
-    function errorConditionForSpotify() {
-        spotify
-        .search({ type: 'track', query: 'Oops!...I Did It Again' })
-        .then(function(response) {
-            for (var i=0;i < response.tracks.items.length; i++) {
-                if (response.tracks.items[i].artists[0].name === "Brittany Spears") {
-                    console.log("Artist: " + response.tracks.items[i].artists[0].name);
-                    console.log("Track: " + response.tracks.items[i].name);
-                    console.log("Preview URL: " + response.tracks.items[i].preview_url);
-                    console.log("Album: " + response.tracks.items[i].album.name);
-                    i = response.tracks.items.length;
+    inquirer.prompt([
+        {
+        type: "input",
+        message: "What song do you want to hear?",
+        mame: "track"
+        },
+    
+        function spotify(song) {
+            spotify
+            .search({ type: "track", query: song })
+            .then(function(response){
+                if (response.tracks.total === 0) {
+                    errorConditionForSpotify();
+                } else {
+                    console.log("Artist: " + response.tracks.items[0].artists[0].name);
+                    console.log("Track: " + response.tracks.items[0].name);
+                    console.log("Preview URL: " + response.tracks.items[0].preview_url);
+                    console.log("Album: " + response.tracks.items[0].album.name);
                 }
-            }
-        }).catch(function (error) {  
-            console.log(error);
-            console.log("No Results found. ");
-      });
-    }
-])
+            }).catch(function (error) {  
+                console.log(error);
+                console.log("No Results found. Showing results for 'Oops!....I Did It Again' by Brittany Spears");
+          });
+        },
+    
+        function errorConditionForSpotify() {
+            spotify
+            .search({ type: 'track', query: 'Oops!...I Did It Again' })
+            .then(function(response) {
+                for (var i=0;i < response.tracks.items.length; i++) {
+                    if (response.tracks.items[i].artists[0].name === "Brittany Spears") {
+                        console.log("Artist: " + response.tracks.items[i].artists[0].name);
+                        console.log("Track: " + response.tracks.items[i].name);
+                        console.log("Preview URL: " + response.tracks.items[i].preview_url);
+                        console.log("Album: " + response.tracks.items[i].album.name);
+                        i = response.tracks.items.length;
+                    }
+                }
+            }).catch(function (error) {  
+                console.log(error);
+                console.log("No Results found. ");
+          });
+        }
+    ])
+    
+
+}
+
 
 //movie-this
 //this will show in the terminal:
@@ -114,7 +118,7 @@ inquirer.prompt([
     //actors in the movie.
 //if the user doesn't type a movie in, then choose a default movie to submit to the API
 
-if (response.choices === ("spotify-this-song")) {
+if (response.choices === ("movie-this")) {
 
 inquirer.prompt([
     {
