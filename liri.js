@@ -14,7 +14,7 @@ let spotify = new Spotify(keys.spotify);
 let command = process.argv[2]
 let searchTerm = process.argv[3]
 
-//error
+//log.txt bonus
 fs.appendFile('log.txt', command + ",", function (err) {
     if (err) throw err;
 });
@@ -131,12 +131,12 @@ inquirer.prompt([
                     console.log("Title: " + response.data.Title);
                     console.log("Year: " + response.data.Year);
                     console.log("imdbRating:: " + response.data.imdbRating);
-                    console.log("Title: " + response.data.Title);
+                    console.log("RottenTomatoes: " + response.data.tomatoRating);
                     console.log("Country:: " + response.data.Country);
                     console.log("Language:: " + response.data.Language);
                     console.log("Plot: " + response.data.Plot);
                     console.log("Actors: " + response.data.Actors);
-                    console.log("RottenTomatoes: " + response.data.tomatoRating);
+                   
                 } 
                 else {
                     movieThis("Mr. Nobody");
