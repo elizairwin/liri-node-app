@@ -18,7 +18,7 @@ fs.appendFile('log.txt', command + ",", function (err) {
     if (err) throw err;
 });
 
-//switch command since there are three scenarios here
+//switch command since there are three blocks here
 switch (command){
     case "spotify-this-song":  
         spotify(searchTerm);
@@ -31,22 +31,6 @@ switch (command){
     break;
 }
 
-//gather some initial info from the user
-inquirer.prompt([
-    {
-    type: "input",
-    message: "What is your name?",
-    name: "username"
-    },
-    {
-    type: "checkbox",
-    message: "What would you like Liri to help you with?",
-    choices: ["spotify-this-song", "movie-this", "do-what-it-says"],
-    name: "LiriAsked"
-    },
-
-]).then(function(answers){
-
     //spotify-this-song
 //this will show in the terminal:
     //artist(s)
@@ -55,16 +39,7 @@ inquirer.prompt([
     //the album that the song is from
 //if no song is provided then choose a default song to submit to the API
 
-if (response.choices === ("spotify-this-song")) {
-
-    inquirer.prompt([
-        {
-        type: "input",
-        message: "What song do you want to hear?",
-        mame: "track"
-        },
-    
-        function spotify(song) {
+function spotify(song) {
             spotify
             .search({ type: "track", query: song })
             .then(function(response){
@@ -118,16 +93,7 @@ if (response.choices === ("spotify-this-song")) {
     //actors in the movie.
 //if the user doesn't type a movie in, then choose a default movie to submit to the API
 
-if (response.choices === ("movie-this")) {
-
-inquirer.prompt([
-    {
-    type: "input",
-    message: "What movie do you want to know about?",
-    name: "movie"
-    },
-
-    function movieThis(movie) {
+function movieThis(movie) {
         axios.get("http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&tomatoes=true&apikey=trilogy").then(
             function(response) {
                 //console.log(response.data);
