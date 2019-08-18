@@ -15,6 +15,7 @@ let searchTerm = process.argv[3]
 
 //log.txt bonus - append to file, no re-write
 fs.appendFile('log.txt', command + ",", function (err) {
+    //catch/throw from w3schools
     if (err) throw err;
 });
 
@@ -25,21 +26,23 @@ fs.appendFile('log.txt', command + ",", function (err) {
     //a preview link of the song from Spotify
     //the album that the song is from
     //if no song is provided then choose a default song to submit to the API
-
 function spotifyThis (song) {
     spotify
+        //search and then return the data
         .search({type: "track", query: song})
         .then(function (response) {
             //error for no song provided - function to follow below
             if (response.tracks.total === 0) {
                 errorConditionForSpotify();
             } else {
+            //if a viable song is provided, the below data is returned to user
                 console.log("Artist: " + response.tracks.items[0].artists[0].name);
                 console.log("Track: " + response.tracks.items[0].name);
                 console.log("Preview URL: " + response.tracks.items[0].preview_url);
                 console.log("Album: " + response.tracks.items[0].album.name);
             }
         //catch function handles my errors - used from here on out in this project
+        //w3schools
         }).catch(function (error) {
             console.log(error);
             console.log("No Results found. Showing results for 'Oops!....I Did It Again' by Brittany Spears");
@@ -49,9 +52,11 @@ function spotifyThis (song) {
 //function to be executed for song selected by me in the case of an error
 function errorConditionForSpotify() {
     spotify
+        //preselected song defined below
         .search({ type: 'track', query: 'Oops!...I Did It Again' })
         .then(function (response) {
             for (var i = 0; i < response.tracks.items.length; i++) {
+                //preselected artist defined below
                 if (response.tracks.items[i].artists[0].name === "Brittany Spears") {
                     console.log("Artist: " + response.tracks.items[i].artists[0].name);
                     console.log("Track: " + response.tracks.items[i].name);
@@ -61,6 +66,7 @@ function errorConditionForSpotify() {
                 }
             }
         //error
+        //w3schools
         }).catch(function (error) {
             console.log(error);
             console.log("No Results found. ");
@@ -78,11 +84,11 @@ function errorConditionForSpotify() {
     //plot of the movie.
     //actors in the movie.
     //if the user doesn't type a movie in, then choose a default movie to submit to the API
-
 function movieThis(movie) {
+    //axios call to OMDB
     axios.get("http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&tomatoes=true&apikey=trilogy").then(
         function (response) {
-            //if the movie title is defined...
+            //if the movie title is defined, the below data is returned to the user
             if (response.data.Title != undefined) {
                 console.log("Title: " + response.data.Title);
                 console.log("Year: " + response.data.Year);
@@ -99,6 +105,7 @@ function movieThis(movie) {
             }
         }
         //error
+        //w3schools
         ).catch(function (error) {
             console.log(error);
             console.log("No Results found. ");
@@ -108,8 +115,8 @@ function movieThis(movie) {
 //do-what-it-says
 //will take text in random.text and use it to call one of Liri's commands
 //edit the text in random.txt to test out the feature for movie-this
-
 function doRandom() {
+    //reading random.txt
     fs.readFile("random.txt", "utf8", function(error, data) {
         //separate out data
         var dataArr = data.split(",");
@@ -136,6 +143,7 @@ function RunApp(){
     }
 }
 
+//initialize
 RunApp();
 
 
