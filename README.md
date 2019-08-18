@@ -33,7 +33,7 @@ The user needs info for songs and/or movies
 ## Screenshots:
 spotify-this-song: [(https://i.postimg.cc/Jnb9dzTY/Screen-Shot-2019-08-17-at-8-41-03-PM.png)]
 
-movie-this: [(https://i.postimg.cc/J495t57J/Screen-Shot-2019-08-17-at-8-41-38-PM.png)]
+movie-this: [(https://i.postimg.cc/nrBL8LJJ/Screen-Shot-2019-08-17-at-8-41-38-PM.png)]
 
 do-what-it-says: [(https://i.postimg.cc/65Gds4VQ/Screen-Shot-2019-08-17-at-8-43-23-PM.png)]
 
