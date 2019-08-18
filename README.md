@@ -26,9 +26,9 @@ The user needs info for songs and/or movies
 2. Navigate to liri-node-app
 3. Type 'node liri.js' followed by one of these options:
     
-    spotify-this-song 'song name'
-    movie-this 'movie name'
-    do-what-it-says (this will pull from random.txt)
+    *spotify-this-song 'song name'
+    *movie-this 'movie name'
+    *do-what-it-says (this will pull from random.txt)
 
 ## Screenshots:
 spotify-this-song: [(https://i.postimg.cc/Jnb9dzTY/Screen-Shot-2019-08-17-at-8-41-03-PM.png)]
