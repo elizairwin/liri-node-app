@@ -54,17 +54,17 @@ function errorConditionForSpotify() {
     spotify
         //preselected song defined below
         .search({ type: 'track', query: 'Oops!...I Did It Again' })
-        .then(function (response) {
-            for (var i = 0; i < response.tracks.items.length; i++) {
-                //preselected artist defined below
-                if (response.tracks.items[i].artists[0].name === "Brittany Spears") {
-                    console.log("Artist: " + response.tracks.items[i].artists[0].name);
-                    console.log("Track: " + response.tracks.items[i].name);
-                    console.log("Preview URL: " + response.tracks.items[i].preview_url);
-                    console.log("Album: " + response.tracks.items[i].album.name);
-                    i = response.tracks.items.length;
-                }
-            }
+       .then(function (notfoundresponse) {
+           for (var i = 0; i < notfoundresponse.tracks.items.length; i++) {
+               //preselected artist defined below
+               // if (notfoundresponse.tracks.items[i].artists[0].name === "Brittany Spears") {
+                   console.log("Artist: " + notfoundresponse.tracks.items[i].artists[0].name);
+                   console.log("Track: " + notfoundresponse.tracks.items[i].name);
+                   console.log("Preview URL: " + notfoundresponse.tracks.items[i].preview_url);
+                   console.log("Album: " + notfoundresponse.tracks.items[i].album.name);
+                   i = notfoundresponse.tracks.items.length;
+               // }
+           }
         //error
         //w3schools
         }).catch(function (error) {
@@ -145,5 +145,3 @@ function RunApp(){
 
 //initialize
 RunApp();
-
-
