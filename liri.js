@@ -86,7 +86,7 @@ function movieThis(movie) {
             if (response.data.Title != undefined) {
                 console.log("Title: " + response.data.Title);
                 console.log("Year: " + response.data.Year);
-                console.log("imdbRating:: " + response.data.imdbRating);
+                console.log("imdbRating: " + response.data.imdbRating);
                 console.log("RottenTomatoes: " + response.data.tomatoRating);
                 console.log("Country:: " + response.data.Country);
                 console.log("Language:: " + response.data.Language);
