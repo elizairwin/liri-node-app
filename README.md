@@ -30,9 +30,6 @@ Instructions for Use:
 Screenshots:
 TBD
 
-Link To App: 
-https://elizairwin.github.io/liri-node-app/
-
 My Role in App Developement: 
     Performed Setup, including: 
         Installing necessary packages 
