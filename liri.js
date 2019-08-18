@@ -3,6 +3,7 @@ require("dotenv").config();
 const axios = require("axios");
 const fs = require("fs");
 const Spotify = require("node-spotify-api");
+//dates, times
 const moment = require("moment");
 
 //require liri to use keys from keys file (which are also in .env which will be hidden)
@@ -42,6 +43,7 @@ function spotifyThis (song) {
                 console.log("Preview URL: " + response.tracks.items[0].preview_url);
                 console.log("Album: " + response.tracks.items[0].album.name);
             }
+            
         //catch function handles my errors - used from here on out in this project
         //w3schools
         }).catch(function (error) {
