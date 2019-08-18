@@ -3,11 +3,11 @@
 ## Description: 
 Liri is like the iPhone's Siri. It is a language interpreter that takes in text and returns data for the user. We use the command line to ask Siri about songs and/or movies.
 
-Problem to Solve: 
+## Problem to Solve: 
 The user needs info for songs and/or movies
 
 ## Organization: 
-   - [x] Added required libraries/packages
+    Added required libraries/packages
     Defined variables to be used
     Included functions to traverse JSON
     Returned data to user with console.log
@@ -29,7 +29,7 @@ The user needs info for songs and/or movies
         -movie-this 'movie name'
         -do-what-it-says (this will pull from random.txt)
 
-#Screenshots:
+## Screenshots:
 TBD
 
 ## My Role in App Developement: 
