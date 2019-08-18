@@ -30,7 +30,9 @@ The user needs info for songs and/or movies
         -do-what-it-says (this will pull from random.txt)
 
 ## Screenshots:
-TBD
+spotify-this-song: [![Screen-Shot-2019-08-17-at-8-41-03-PM.png](https://i.postimg.cc/Jnb9dzTY/Screen-Shot-2019-08-17-at-8-41-03-PM.png)](https://postimg.cc/zbGty8YT)
+movie-this: [![Screen-Shot-2019-08-17-at-8-41-38-PM.png](https://i.postimg.cc/J495t57J/Screen-Shot-2019-08-17-at-8-41-38-PM.png)](https://postimg.cc/N5kHzTHf)
+do-what-it-says: [![Screen-Shot-2019-08-17-at-8-43-23-PM.png](https://i.postimg.cc/65Gds4VQ/Screen-Shot-2019-08-17-at-8-43-23-PM.png)](https://postimg.cc/MvqcVTFk)
 
 ## My Role in App Developement: 
     Performed Setup, including: 
