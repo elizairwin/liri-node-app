@@ -132,11 +132,8 @@ function doRandom() {
 function RunApp(){
     switch (command) {
     case "spotify-this-song":
-        if (process.argv.length<=3){
-          searchTerm = " ";
-          spotifyThis(searchTerm);
-          break;
-        }
+        spotifyThis(searchTerm);
+        break;
     case "movie-this":
         movieThis(searchTerm);
         break;
