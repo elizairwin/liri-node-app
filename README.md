@@ -5,7 +5,7 @@ Problem to Solve:
 The user needs info for songs and/or movies
 
 #Organization: 
-    Added required libraries/packages
+   - [x] Added required libraries/packages
     Defined variables to be used
     Included functions to traverse JSON
     Returned data to user with console.log
