@@ -1,4 +1,4 @@
-#Description: 
+# Description: 
 Liri is like the iPhone's Siri. It is a language interpreter that takes in text and returns data for the user. We use the command line to ask Siri about songs and/or movies.
 
 Problem to Solve: 
