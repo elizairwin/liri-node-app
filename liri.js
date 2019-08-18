@@ -18,19 +18,6 @@ fs.appendFile('log.txt', command + ",", function (err) {
     if (err) throw err;
 });
 
-//switch command since there are three blocks here
-switch (command) {
-    case "spotify-this-song":
-        spotify(searchTerm);
-        break;
-    case "movie-this":
-        movieThis(searchTerm);
-        break;
-    case "do-what-it-says":
-        doRandom();
-        break;
-}
-
 //spotify-this-song
 //this will show in the terminal:
     //artist(s)
@@ -39,7 +26,7 @@ switch (command) {
     //the album that the song is from
     //if no song is provided then choose a default song to submit to the API
 
-function spotify(song) {
+function spotifyThis (song) {
     spotify
         .search({type: "track", query: song})
         .then(function (response) {
@@ -122,12 +109,33 @@ function movieThis(movie) {
 //will take text in random.text and use it to call one of Liri's commands
 //edit the text in random.txt to test out the feature for movie-this
 
-// function doRandom() {
-//     fs.readFile("random.txt", "utf8", function(error, data) {
-//         var dataArr = data.split(",");
-//         spotify(dataArr[1])
-//         if (error) {
-//           return console.log(error);
-//         }
-//     });
-// }
+function doRandom() {
+    fs.readFile("random.txt", "utf8", function(error, data) {
+        //separate out data
+        var dataArr = data.split(",");
+        spotifyThis(dataArr[1])
+        //error
+        if (error) {
+          return console.log(error);
+        }
+    });
+}
+
+//switch function because there are three code blocks
+function RunApp(){
+    switch (command) {
+    case "spotify-this-song":
+        spotifyThis(searchTerm);
+        break;
+    case "movie-this":
+        movieThis(searchTerm);
+        break;
+    case "do-what-it-says":
+        doRandom();
+        break;
+    }
+}
+
+RunApp();
+
+
