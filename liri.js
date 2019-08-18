@@ -14,6 +14,7 @@ let command = process.argv[2]
 let searchTerm = process.argv[3]
 
 //log.txt bonus - append to file, no re-write
+//used bank.js activity
 fs.appendFile('log.txt', command + ",", function (err) {
     //catch/throw from w3schools
     if (err) throw err;
@@ -129,6 +130,7 @@ function doRandom() {
 }
 
 //switch function because there are three code blocks
+//used bank.js activity
 function RunApp(){
     switch (command) {
     case "spotify-this-song":
@@ -142,6 +144,5 @@ function RunApp(){
         break;
     }
 }
-
 //initialize
 RunApp();
