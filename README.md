@@ -32,11 +32,15 @@ The user needs info for songs and/or movies
 ## Screenshots:
 spotify-this-song: [(https://i.postimg.cc/Jnb9dzTY/Screen-Shot-2019-08-17-at-8-41-03-PM.png)]
 
-spotify-error: [(https://i.postimg.cc/fRtPQ9G9/Screen-Shot-2019-08-18-at-5-16-39-PM.png)]
+* spotify error for mistyped song: [(https://i.postimg.cc/fRtPQ9G9/Screen-Shot-2019-08-18-at-5-16-39-PM.png)]
+
+* spotify error for no song typed: [(https://i.postimg.cc/QtCWxw74/Screen-Shot-2019-08-18-at-8-30-44-PM.png)]
 
 movie-this: [(https://i.postimg.cc/nrBL8LJJ/Screen-Shot-2019-08-17-at-8-41-38-PM.png)]
 
-movie-error: [(https://i.postimg.cc/65Y7x7rt/Screen-Shot-2019-08-18-at-5-17-03-PM.png)]
+* movie error for mistyped movie: [(https://i.postimg.cc/65Y7x7rt/Screen-Shot-2019-08-18-at-5-17-03-PM.png)]
+
+* movie error for no movie typed: [(https://i.postimg.cc/GmzFLkNp/Screen-Shot-2019-08-18-at-8-31-00-PM.png)]
 
 do-what-it-says: [(https://i.postimg.cc/65Gds4VQ/Screen-Shot-2019-08-17-at-8-43-23-PM.png)]
 
