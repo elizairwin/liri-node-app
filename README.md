@@ -17,7 +17,6 @@ The user needs info for songs and/or movies
 * Node-Spotify-API
 * OMDB API
 * Axios
-* Moment
 * JavaScipt
 * Node.js
 

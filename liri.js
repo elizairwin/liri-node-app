@@ -3,7 +3,7 @@ require("dotenv").config();
 const axios = require("axios");
 const fs = require("fs");
 const Spotify = require("node-spotify-api");
-//dates, times
+//dates, times - used for concert-this but not here
 const moment = require("moment");
 
 //require liri to use keys from keys file (which are also in .env which will be hidden)
