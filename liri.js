@@ -56,7 +56,7 @@ function errorConditionForSpotify() {
             for (var i = 0; i < notfoundresponse.tracks.items.length; i++) {
                 console.log(`
                     Artist: ${notfoundresponse.tracks.items[i].artists[0].name}
-                    Track: ${notfoundresponse.tracks.items[i].artists[0].name}
+                    Track: ${notfoundresponse.tracks.items[0].name}
                     Preview URL: ${notfoundresponse.tracks.items[i].preview_url}
                     Album: ${notfoundresponse.tracks.items[i].album.name}
                     `);
@@ -121,11 +121,21 @@ function doRandom() {
 function RunApp() {
     switch (command) {
         case "spotify-this-song":
-            spotifyThis(searchTerm);
-            break;
+            if (!searchTerm){
+                spotifyThis("Womanizer");
+                break;
+            }else{
+                spotifyThis(searchTerm);
+                break;
+            }
         case "movie-this":
-            movieThis(searchTerm);
-            break;
+            if (!searchTerm){
+                movieThis("Lion");
+                break;
+            }else{
+                movieThis(searchTerm);
+                break;
+            }
         case "do-what-it-says":
             doRandom();
             break;
