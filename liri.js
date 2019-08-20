@@ -4,11 +4,12 @@ const axios = require("axios");
 const fs = require("fs");
 const Spotify = require("node-spotify-api");
 //dates, times - used for concert-this but not here
-const moment = require("moment");
+//const moment = require("moment");
 
-//require liri to use keys from keys file (which are also in .env which will be hidden)
+//require liri to use keys from keys.js file and store in this variable
 const keys = require("./keys.js");
-let spotify = new Spotify(keys.spotify);
+//below is to access Spotify keys
+const spotify = new Spotify(keys.spotify);
 
 //define variables using process.argv below
 let command = process.argv[2]
@@ -108,8 +109,9 @@ function doRandom() {
     fs.readFile("random.txt", "utf8", function (error, data) {
         //separate out data
         var dataArr = data.split(",");
+        //search for song
         spotifyThis(dataArr[1])
-        //error
+        //error logged to console
         if (error) {
             return console.log(error);
         }
@@ -122,6 +124,7 @@ function RunApp() {
     switch (command) {
         case "spotify-this-song":
             if (!searchTerm){
+                //default song
                 spotifyThis("Womanizer");
                 break;
             }else{
@@ -130,6 +133,7 @@ function RunApp() {
             }
         case "movie-this":
             if (!searchTerm){
+                //default movie
                 movieThis("Lion");
                 break;
             }else{
