@@ -1,10 +1,10 @@
-# Liri-Bot
+# liri-node-app
 
 ## Description: 
 Liri is like the iPhone's Siri. It is a language interpreter that takes in text and returns data for the user. Here, we use the command line to ask Siri about songs and/or movies.
 
 ## Problem to Solve: 
-The user needs info for songs and/or movies
+The user needs info for songs and/or movies.
 
 ## Organization: 
 * Added required libraries/packages
